@@ -1,0 +1,49 @@
+{
+  "manifestVersion": 1,
+  "id": "build-task",
+  "name": "Replace AppSettings",
+  "version": "0.0.1",
+  "publisher": "codingintent",
+  "public": false,
+  "targets": [
+	{
+	  "id": "Microsoft.VisualStudio.Services"
+	}
+  ],
+  "description": "Replace AppSettings and ConnectionString with variables.",
+  "categories": [
+	"Build and release"
+  ],
+  "scopes": [
+	"vso.build"
+  ],
+  "icons": {
+	"default": "images/extension-icon.png"
+  },
+  "content": {
+	"details": {
+	  "path": "readme.md"
+	}
+  },
+  "repository": {
+	"type": "git",
+	"uri": "https://github.com/darrencamp/vsts-replace-appsettings"
+  },
+  "files": [
+	{
+	  "path": "buildtask"
+	}
+  ],
+  "contributions": [
+	{
+	  "id": "custom-build-task",
+	  "type": "ms.vss-distributed-task.task",
+	  "targets": [
+		"ms.vss-distributed-task.tasks"
+	  ],
+	  "properties": {
+		"name": "buildtask"
+	  }
+	}
+  ]
+}

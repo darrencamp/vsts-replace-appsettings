@@ -1,0 +1,31 @@
+{
+    "id": "31c550e7-9f37-44f9-ac48-07bf8bbee54b",
+    "name": "replaceAppSettings",
+    "friendlyName": "Replace AppSettings and ConnectionStrings",
+    "description": "Replace AppSettings and ConnectionString with matching variables",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "codingintent",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+  "instanceNameFormat": "Replace Config settings in $(sourceInput)",
+  "groups": [],
+  "inputs": [
+	{
+	  "name": "sourceFile",
+	  "type": "filePath",
+	  "label": "Source path folder",
+	  "defaultValue": "",
+	  "required": true,
+	  "helpMarkDown": "Root folder to recursively search for *.config"
+	}
+  ],
+  "execution": {
+	"Node": {
+	  "target": "index.js"
+	}
+  }
+}

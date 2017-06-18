@@ -1,0 +1,16 @@
+{
+  "name": "vsts-replace-appsettings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "upload": "tfx build tasks upload --task-path"
+  },
+  "dependencies": {
+    "vsts-task-lib": "^2.0.5"
+  },
+  "devDependencies": {
+  },
+  "author": "",
+  "license": "ISC"
+}
