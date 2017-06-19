@@ -1,6 +1,6 @@
 const tl = require('vsts-task-lib');
 
-export function isPredefinedVariable(variable) {
+function isPredefinedVariable(variable) {
     var predefinedVarPrefix = ['agent.', 'azure_http_user_agent', 'build.', 'common.', 'release.', 'system', 'tf_'];
     for(let varPrefix of predefinedVarPrefix) {
         if(variable.toLowerCase().startsWith(varPrefix)) {
@@ -10,20 +10,20 @@ export function isPredefinedVariable(variable) {
     return false;
 }
 
-export function isEmpty(object){
+function isEmpty(object){
     if(object == null || object == "")
         return true;
     return false;
 }
 
-export function isObject(object){
+function isObject(object){
     if(object == null || object == "" || typeof(object) != 'object'){
         return false;
     }
     return true;
 }
 
-export function getVariableMap() {
+function getVariableMap() {
     var variableMap = {};
     var taskVariables = tl.getVariables();
     for(var taskVariable of taskVariables) {
@@ -33,3 +33,9 @@ export function getVariableMap() {
     }
     return variableMap;
 }
+
+exports.isPredefinedVariable = isPredefinedVariable
+exports.isEmpty = isEmpty
+exports.isObject = isObject
+exports.getVariableMap = getVariableMap
+

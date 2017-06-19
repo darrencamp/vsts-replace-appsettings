@@ -8,18 +8,18 @@
     "author": "codingintent",
     "version": {
         "Major": 0,
-        "Minor": 1,
-        "Patch": 0
+        "Minor": 4,
+        "Patch": 17
     },
   "instanceNameFormat": "Replace Config settings in $(sourceInput)",
   "groups": [],
   "inputs": [
 	{
-	  "name": "sourceFile",
-	  "type": "filePath",
+	  "name": "sourcePath",
+	  "type": "string",
 	  "label": "Source path folder",
 	  "defaultValue": "",
-	  "required": true,
+	  "required": false,
 	  "helpMarkDown": "Root folder to recursively search for *.config"
 	}
   ],

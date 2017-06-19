@@ -5,7 +5,7 @@ var Q = require('q');
 var xmlDomLookUpTable = {};
 var headerContent;
 
-export function initializeDOM(xmlContent) {
+function initializeDOM(xmlContent) {
     xmlDomLookUpTable = {};
     headerContent = null;
     var xmlDom = ltx.parse(xmlContent);
@@ -24,7 +24,7 @@ function readHeader(xmlContent) {
     }
 }
 
-export function getContentWithHeader(xmlDom) {
+function getContentWithHeader(xmlDom) {
     return xmlDom ? (headerContent ? headerContent + "\n" : "") + xmlDom.root().toString() : "";
 }
 
@@ -56,7 +56,7 @@ function buildLookUpTable(node) {
 /**
  *  Returns array of nodes which match with the tag name.
  */
-export function getElementsByTagName(nodeName) {
+function getElementsByTagName(nodeName) {
     if(varUtility.isEmpty(nodeName))
         return [];
     var selectedElements = xmlDomLookUpTable[nodeName.toLowerCase()];
@@ -69,7 +69,7 @@ export function getElementsByTagName(nodeName) {
 /**
  *  Search in subtree with provided node name
  */
-export function getChildElementsByTagName(node, tagName) {
+function getChildElementsByTagName(node, tagName) {
     if(!varUtility.isObject(node) )
         return [];
     var children = node.children;
@@ -88,3 +88,8 @@ export function getChildElementsByTagName(node, tagName) {
     }
     return liveNodes;
 }
+
+exports.initializeDOM = initializeDOM
+exports.getContentWithHeader = getContentWithHeader
+exports.getElementsByTagName = getElementsByTagName
+exports.getChildElementsByTagName = getChildElementsByTagName

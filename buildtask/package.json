@@ -7,10 +7,14 @@
     "upload": "tfx build tasks upload --task-path ."
   },
   "dependencies": {
+    "babel-cli": "^6.24.1",
+    "ltx": "^2.7.1",
     "vso-node-api": "^6.2.3-preview",
     "vsts-task-lib": "^2.0.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1"
+  },
   "author": "",
   "license": "ISC"
 }

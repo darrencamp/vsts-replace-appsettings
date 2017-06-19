@@ -48,10 +48,13 @@ function detectFileEncodingWithoutBOM(fileName, buffer) {
             throw Error(tl.loc('UnknownFileEncodeError', fileName, typeCode));
     }
 }
-export function detectFileEncoding(fileName, buffer) {
+
+function detectFileEncoding(fileName, buffer) {
     if(buffer.length < 4) {
         throw Error(tl.loc('ShortFileBufferError', fileName));
     }
     var fileEncoding = detectFileEncodingWithBOM(fileName, buffer) || detectFileEncodingWithoutBOM(fileName, buffer);
     return fileEncoding;
 }
+
+exports.detectFileEncoding = detectFileEncoding

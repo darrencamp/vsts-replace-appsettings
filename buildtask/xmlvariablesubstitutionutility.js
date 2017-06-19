@@ -7,7 +7,7 @@ var varUtility = require ('./variableutility.js');
 var ltxdomutility = require("./ltxdomutility.js");
 var fileEncoding = require('./fileencoding.js');
 
-export function substituteAppSettingsVariables(folderPath, isFolderBasedDeployment) {
+function substituteAppSettingsVariables(folderPath, isFolderBasedDeployment) {
     var configFiles = tl.findMatch(folderPath, "**/*.config");
     var variableMap = varUtility.getVariableMap();
     var tags = ["appSettings", "connectionStrings"];
@@ -129,3 +129,5 @@ function updateXmlConnectionStringsNodeAttribute(xmlDomNode, variableMap, replac
         }
     }
 }
+
+exports.substituteAppSettingsVariables = substituteAppSettingsVariables
